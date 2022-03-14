@@ -1,4 +1,5 @@
 // Utilize o tipo `any` apenas em último caso
+// `any` significa qualquer coisa, ou seja, a função abaixo pode receber qualquer coisa
 function showMessage(msg: any) {
   return msg;
 }

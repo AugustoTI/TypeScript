@@ -24,14 +24,10 @@ function checkForEmptyFields(...inputs: HTMLInputElement[]): void {
 }
 
 function checkEmail(input: HTMLInputElement): void {
-  if (!isEmailValid(input.value))
-    showErrorMessage(input, 'Esse email não é valido');
+  if (!isEmailValid(input.value)) showErrorMessage(input, 'Esse email não é valido');
 }
 
-function checkEqualPasswords(
-  password: HTMLInputElement,
-  password2: HTMLInputElement,
-) {
+function checkEqualPasswords(password: HTMLInputElement, password2: HTMLInputElement) {
   if (password.value !== password2.value) {
     showErrorMessage(password, 'As senhas não são iguais');
     showErrorMessage(password2, 'As senhas não são iguais');
@@ -40,9 +36,7 @@ function checkEqualPasswords(
 
 function showErrorMessage(input: HTMLInputElement, msg: string): void {
   const formFields = input.parentElement as HTMLDivElement;
-  const errorMessage = formFields.querySelector(
-    '.error-message',
-  ) as HTMLSpanElement;
+  const errorMessage = formFields.querySelector('.error-message') as HTMLSpanElement;
   errorMessage.innerHTML = msg;
   formFields.classList.add('show-error-message');
 }

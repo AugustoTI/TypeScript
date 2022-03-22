@@ -4,6 +4,7 @@
   },
   "files.exclude": {
     "package-lock.json": true,
-    ".editorconfig": true
+    ".editorconfig": true,
+    "node_modules": true
   }
 }

@@ -3,7 +3,7 @@ type Resultado = number;
 const arrayNumeros: Array<number> = [1, 2, 3, 4, 5];
 console.log(arrayNumeros);
 
-async function promoiseAsync() {
+async function promiseAsync() {
   return 1;
 }
 
@@ -15,5 +15,5 @@ function myPromise(): Promise<Resultado | number> {
   });
 }
 
-promoiseAsync().then((value) => console.log(value + 1));
+promiseAsync().then((value) => console.log(value + 1));
 myPromise().then((value) => console.log(value + 2));

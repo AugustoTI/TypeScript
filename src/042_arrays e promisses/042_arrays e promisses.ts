@@ -7,7 +7,7 @@ async function promiseAsync() {
   return 1;
 }
 
-function myPromise(): Promise<Resultado | number> {
+function myPromise(): Promise<Resultado> {
   return new Promise((resolve) => {
     setTimeout(() => {
       resolve(1);

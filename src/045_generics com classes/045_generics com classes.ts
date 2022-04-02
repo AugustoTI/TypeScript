@@ -42,5 +42,6 @@ minhaPilha.push('ABC');
 minhaPilha.push(100);
 minhaPilha.showStack();
 const elementoRemovido = minhaPilha.pop();
+console.log(elementoRemovido);
 
 export default 1;

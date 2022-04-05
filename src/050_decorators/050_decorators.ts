@@ -9,7 +9,7 @@ function decorator<T extends new (...args: any[]) => any>(target: T) {
     nome: string;
 
     constructor(...args: any[]) {
-      super(args);
+      super(...args);
       this.nome = this.reverte(args[0]);
       this.cor = this.reverte(args[1]);
     }

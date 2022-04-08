@@ -1,16 +1,12 @@
 function decorador(
   classPrototype: any,
-  nameMethod: string,
-  description: PropertyDescriptor,
-) {
+  nameMethod: string | symbol,
+  index: number,
+): any {
   console.log(classPrototype);
   console.log(nameMethod);
-  console.log(description);
-  return {
-    value: function (...args: any[]) {
-      return `Uma nova função que recebeu: ${args}`;
-    },
-  };
+  console.log(index);
+  return 'Qualquer coisa';
 }
 
 class UmaPessoa {
@@ -18,14 +14,17 @@ class UmaPessoa {
   sobrenome: string;
   idade: number;
 
-  constructor(nome: string, sobrenome: string, idade: number) {
+  constructor(
+    @decorador nome: string,
+    @decorador sobrenome: string,
+    @decorador idade: number,
+  ) {
     this.nome = nome;
     this.sobrenome = sobrenome;
     this.idade = idade;
   }
 
-  @decorador
-  metodo(msg: string): string {
+  metodo(@decorador msg: string): string {
     return `${this.nome} ${this.sobrenome}: ${msg}`;
   }
 
